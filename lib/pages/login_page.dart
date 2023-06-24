@@ -32,9 +32,7 @@ class LoginPage extends StatelessWidget {
               height: 20,
             ),
             GestureDetector(
-              onTap: () {
-                
-              },
+              onTap: () {},
               child: Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -62,6 +60,7 @@ class Text_Field extends StatelessWidget {
   Text_Field({super.key, required this.icon, required this.lable});
   String? lable;
   Icon? icon;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
