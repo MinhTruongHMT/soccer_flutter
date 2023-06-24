@@ -3,8 +3,9 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
-
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  LoginPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +19,7 @@ class LoginPage extends StatelessWidget {
               style: TextStyle(fontFamily: 'InstagramFont', fontSize: 40),
             ),
             TextFormField(
+              controller: _usernameController,
               decoration: const InputDecoration(
                   labelText: "Username",
                   prefixIcon: Icon(Icons.person_2_outlined),
@@ -30,6 +32,7 @@ class LoginPage extends StatelessWidget {
               height: 10,
             ),
             TextFormField(
+              controller: _passwordController,
               decoration: const InputDecoration(
                   labelText: "Password",
                   prefixIcon: Icon(Icons.verified_user_outlined),
@@ -39,7 +42,9 @@ class LoginPage extends StatelessWidget {
               height: 20,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                          
+              },
               child: Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
