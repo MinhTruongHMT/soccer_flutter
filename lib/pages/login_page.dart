@@ -31,18 +31,23 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                  color: Colors.blue[100],
-                  borderRadius: BorderRadius.circular(8)),
-              child: const Center(
-                child: Text(
-                  "Sign in",
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+            GestureDetector(
+              onTap: () {
+                
+              },
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    color: Colors.blue[100],
+                    borderRadius: BorderRadius.circular(8)),
+                child: const Center(
+                  child: Text(
+                    "Sign in",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
                 ),
               ),
             )
