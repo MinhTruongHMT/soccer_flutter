@@ -17,17 +17,24 @@ class LoginPage extends StatelessWidget {
               "wellcome back",
               style: TextStyle(fontFamily: 'InstagramFont', fontSize: 40),
             ),
+            TextFormField(
+              decoration: const InputDecoration(
+                  labelText: "Username",
+                  prefixIcon: Icon(Icons.person_2_outlined),
+                  border: OutlineInputBorder()),
+            ),
             const SizedBox(
               height: 10,
             ),
-            Text_Field(
-                icon: const Icon(Icons.person_2_outlined), lable: "Username"),
             const SizedBox(
               height: 10,
             ),
-            Text_Field(
-                icon: const Icon(Icons.verified_user_outlined),
-                lable: "Password"),
+            TextFormField(
+              decoration: const InputDecoration(
+                  labelText: "Password",
+                  prefixIcon: Icon(Icons.verified_user_outlined),
+                  border: OutlineInputBorder()),
+            ),
             const SizedBox(
               height: 20,
             ),
@@ -52,22 +59,6 @@ class LoginPage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class Text_Field extends StatelessWidget {
-  Text_Field({super.key, required this.icon, required this.lable});
-  String? lable;
-  Icon? icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-          labelText: lable,
-          prefixIcon: icon,
-          border: const OutlineInputBorder()),
     );
   }
 }
