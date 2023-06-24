@@ -2,7 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class Shared {
   static SharedPreferences? _sharedpreferences;
-  
+
   static Future init() async {
     _sharedpreferences = await SharedPreferences.getInstance();
   }
@@ -14,7 +14,4 @@ class Shared {
   static String? getString(String key) {
     return _sharedpreferences?.getString(key);
   }
-
 }
-
-

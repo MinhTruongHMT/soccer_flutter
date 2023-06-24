@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:soccer_final_aplication/pages/login_page.dart';
+import 'package:soccer_final_aplication/shared_preferences.dart';
 
 // void main() {
 //   runApp(const MyApp());
 // }
 
-void main() {
-  runApp(
-   const MyApp(), // Wrap your app
-  );
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Shared.init();
+  runApp(const MyApp() // Wrap your app
+      );
 }
 
 class MyApp extends StatelessWidget {
@@ -19,18 +21,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Hello"),
-      ),
     );
   }
 }

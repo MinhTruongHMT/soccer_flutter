@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
 
 class KhachHang extends ChangeNotifier {
-  int? id;
+  late final int id;
   String? userName;
   String? passWord;
   String? phone;
   String? image;
 
-  set setId(int sid) {
-    id = sid;
-    notifyListeners();
-  }
-
-  int? get getId => id;
-
   KhachHang({
-    this.id,
+    required this.id,
     this.userName,
     this.passWord,
     this.phone,
