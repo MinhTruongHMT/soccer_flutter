@@ -13,21 +13,29 @@ class LoginPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Text(
+              "wellcome back",
+              style: TextStyle(fontFamily: 'InstagramFont', fontSize: 40),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
             Text_Field(
-                icon: const Icon(Icons.person_2_outlined), lable: "User Name"),
+                icon: const Icon(Icons.person_2_outlined), lable: "Username"),
             const SizedBox(
               height: 10,
             ),
             Text_Field(
                 icon: const Icon(Icons.verified_user_outlined),
-                lable: "Pass word"),
+                lable: "Password"),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                  color: Colors.black, borderRadius: BorderRadius.circular(8)),
+                  color: Colors.blue[100],
+                  borderRadius: BorderRadius.circular(8)),
               child: const Center(
                 child: Text(
                   "Sign in",
