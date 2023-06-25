@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:soccer_final_aplication/shared_preferences.dart';
 import '../model/khach_hang.dart';
-import 'home_page.dart';
+import 'main_page.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController _usernameController = TextEditingController();
@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
 
   void login(String userName, String passWord, BuildContext context) async {
     final response = await http.post(
-      Uri.parse('http://192.168.1.5:8080/api/khachhangs/login'),
+      Uri.parse('http://192.168.0.98:8080/api/khachhangs/login'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -23,6 +23,8 @@ class LoginPage extends StatelessWidget {
     if (response.statusCode == 200) {
       KhachHang kh = KhachHang.fromJson(jsonDecode(response.body));
       Shared.setKey("id", kh.id.toString());
+      Shared.setKey("name", kh.userName.toString());
+      Shared.setKey("image", kh.image.toString());
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const HomePage()));
     } else {
